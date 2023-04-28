@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LibraryTravelProject.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Libros</h1>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo Libro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            @*
+            <th>
+                @Html.DisplayNameFor(model => model.Editorial)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Sinopsis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.n_paginas)
+            </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+
+                @*
+            <td>
+                @Html.DisplayFor(modelItem => item.Editorial.Nombre)
+            </td>
+                
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.n_paginas)
+            </td>
+            *@
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ISBN">Ver Detalles</a> 
+               @* <a asp-action="Edit" asp-route-id="@item.ISBN">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ISBN">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

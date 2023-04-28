@@ -1,0 +1,47 @@
+﻿@model LibraryTravelProject.Models.Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Editorial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Editorial.Nombre) -
+            @Html.DisplayFor(model => model.Editorial.Sede)
+         </dd>
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.n_paginas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.n_paginas)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sinopsis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sinopsis)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.ISBN">Edit</a> |*@
+    <a asp-action="Index">Volver a la lista</a>
+</div>
